@@ -25,4 +25,4 @@ Run: `sudo python3 crab.py`
 
 ## Data and Plots
 
-To reproduce plots from the paper, see the repository: 
+To reproduce plots from the paper, run respective figure's python file in `plots` directory. 
