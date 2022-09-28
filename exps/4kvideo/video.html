@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
+    <div id="player"></div>
+
+    <script>
+      // 2. This code loads the IFrame Player API code asynchronously.
+      console.log(window.location.hash)
+
+      var tag = document.createElement('script');
+
+      tag.src = "https://www.youtube.com/iframe_api";
+      var firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+      // 3. This function creates an <iframe> (and YouTube player)
+      //    after the API code downloads.
+      var player;
+      var data = "";
+      function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player', {
+          // height: '1080',
+          // width: '1772',
+          // videoId: '635uup08DLU',
+          height: '2160',
+          width: '3544',
+          // videoId: 'fLJUx1XrGFI',
+          videoId: window.location.hash.substring(1),
+          playerVars: {
+            'autoplay': 1,
+            'mute': 1
+          },
+          events: {
+            'onReady': onPlayerReady,
+            'onStateChange': onPlayerStateChange,
+            'onPlaybackQualityChange': onPlaybackQualityChange
+          }
+        });
+      }
+
+      function send(m){
+        var  k = new XMLHttpRequest();
+        k.open("POST", "http://127.0.0.1:8888", 1);
+        k.send(JSON.stringify(m));
+        return;
+        // $.ajax({
+        //  url: 'http:127.0.0.1:8000',
+        //  type: 'POST',
+        //  data: JSON.stringify(m),
+        //  contentType: 'application/json',
+        // });
+      }
+
+      // 4. The API will call this function when the video player is ready.
+      function onPlayerReady(event) {
+        console.log("Video ready")
+        event.target.playVideo();
+      }
+
+      // 5. The API calls this function when the player's state changes.
+      //    The function indicates that when playing a video (state=1),
+      //    the player should play for six seconds and then stop.
+      var done = false;
+      function onPlayerStateChange(event) {
+        if (event.data == YT.PlayerState.PLAYING) {
+          console.log(Date.now(), "Video playing");
+          data += ("video.html "+Date.now()+" Video playing\n")
+	        console.log(Date.now(), "Starting quality", player.getPlaybackQuality())
+          data += ("video.html "+Date.now()+" Starting quality "+player.getPlaybackQuality()+"\n")
+          done = true;
+        }
+        else if (event.data == YT.PlayerState.BUFFERING) {
+          data += ("video.html "+Date.now()+" Rebuffering...\n")
+          console.log(Date.now(), "Rebuffering...")
+        }
+      	else if (event.data == YT.PlayerState.ENDED) {
+      	  console.log(Date.now(), "Ended");
+          data += ("video.html "+Date.now()+" Ended\n")
+          send(data)
+      	}
+      }
+
+      function onPlaybackQualityChange(event) {
+        data += ("video.html "+Date.now()+" Playback quality changed -> "+event.data+"\n")
+        console.log(data)
+      }
+
+      function stopVideo() {
+        player.stopVideo();
+      }
+    </script>
+
+    <p id="Quality" >Video Quality: x</p>
+    <p id="Buffer" >Buffer Events: x</p>
+  </body>
+</html>

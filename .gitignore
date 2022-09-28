@@ -1,0 +1,7 @@
+chromedriver
+chrome_extension.crx
+chrome_extension.pem
+*.txt
+/exps/4k/*
+/exps/here/*
+/exps/~/*

@@ -1,0 +1,1 @@
+tc qdisc del dev ifb0 root

@@ -1,0 +1,38 @@
+{
+	"google.com" : [
+		"https://www.google.com/",
+		"https://www.google.com/search?q=iphone+12",
+		"https://www.google.com/search?q=iphone+12&hl=en-US&source=lnms&tbm=isch&sa=X"
+		"https://www.google.com/search?q=iphone+13",
+		"https://www.google.com/search?q=iphone+11",
+		"https://www.google.com/search?q=iphone+11&hl=en-US&source=lnms&tbm=isch&sa=X",
+		"https://www.google.com/search?q=phone",
+		"https://www.google.com/search?q=phone&hl=en-US&source=lnms&tbm=isch&sa=X",
+		"https://www.google.com/search?q=iphone+X",
+		"https://www.google.com/search?q=iphone+5",
+		"https://www.google.com/search?q=iphone+5&hl=en-US&source=lnms&tbm=isch&sa=X"
+	],
+	"facebook.com": [
+		"https://www.facebook.com/",
+		"https://www.facebook.com/icc/",
+		"https://www.facebook.com/fifa/",
+		"https://www.facebook.com/nfl/",
+		"https://www.facebook.com/obama/",
+		"https://www.facebook.com/nba/",
+		"https://www.facebook.com/google/",
+		"https://www.facebook.com/mark/"
+	],
+	"bbc.com": [
+		"https://www.bbc.com/",
+		"https://www.bbc.com/future/article/20210915-the-worlds-most-expensive-animals",
+		"https://www.bbc.com/sport",
+		"https://www.bbc.com/sport/cricket/58586602"
+	],
+	"yahoo.com": [
+		"https://www.yahoo.com/",
+		"https://news.yahoo.com/",
+	],
+	"youtube.com": [
+		"https://www.youtube.com/"
+	]
+}
