@@ -3,7 +3,7 @@ from functions import *
 path = 'data/robustness_analysis/'
 flow_idfrs = ['.3001 > crab-VirtualBox', '.3002 > crab', '.3003 > crab']
 exps = ["cubic_cubic/", "bbr_bbr/", "cubic_bbr/", "bbr_cubic/"]
-exp_names = ["Cubic &\nCubic", "BBR &\nBBR", "Cubic &\nBBR", "BBR &\nCubic"]
+exp_names = ["Cubic \&\nCubic", "BBR \&\nBBR", "Cubic \&\nBBR", "BBR \&\nCubic"]
 td = 50
 flow1 = []
 flow2 = []

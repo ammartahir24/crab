@@ -1,7 +1,9 @@
-chromedriver
-chrome_extension.crx
-chrome_extension.pem
-*.txt
+*chromedriver
+*chrome_extension.crx
+*chrome_extension.pem
+*.DS_Store
 /exps/4k/*
 /exps/here/*
 /exps/~/*
+/plots/data/*
+/plots/crab_data.tar.gz

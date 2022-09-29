@@ -10,8 +10,21 @@ import os
 # sns.set(rc={'axes.facecolor':'white', 'figure.facecolor':'white'})
 sns.set_style("whitegrid")
 
+plt.rcParams['text.usetex'] = True
+SMALL_SIZE = 13
+MEDIUM_SIZE = 16
+BIGGER_SIZE = 18
 
-td = 100
+plt.rc('font', size=SMALL_SIZE)          # controls default text sizes
+plt.rc('axes', titlesize=SMALL_SIZE)     # fontsize of the axes title
+plt.rc('axes', labelsize=MEDIUM_SIZE)    # fontsize of the x and y labels
+plt.rc('xtick', labelsize=SMALL_SIZE)    # fontsize of the tick labels
+plt.rc('ytick', labelsize=SMALL_SIZE)    # fontsize of the tick labels
+plt.rc('legend', fontsize=SMALL_SIZE)    # legend fontsize
+plt.rc('figure', titlesize=BIGGER_SIZE)  # fontsize of the figure title
+# plt.rcParams['ps.fonttype'] = 42
+
+td = 50
 
 def bw_cap(time_s, file="", ud = (1,10)):
   if file == "":
@@ -176,10 +189,10 @@ def plot3(flows, tm, mbps, bws, bwt, bw_e, tm_e, fname="", trange=-1, yheight=-1
   # max_bw = max(max(cap_bw), max(mm_bw))
   plt.figure(figsize=(8,3))
   # plt.figure(figsize=(10,7))
-  font = {'family' : 'Helvetica',
-        'weight' : 'normal',
-        'size'   : 16}
-  plt.rc('font', **font)
+  # font = {'family' : 'Helvetica',
+  #       'weight' : 'normal',
+  #       'size'   : 20}
+  # plt.rc('font', **font)
   # plt.plot(cap_time, cap_bw, "b--", label="Capped Bandwidth")
   # plt.plot(mm_time, mm_bw, "g", label = "MahiMahi observed Bandwidth")
   # plt.plot(tm, smoothen(mbps, 10), "y", label = "Goodput")
@@ -270,11 +283,11 @@ def flow_download(flows, trange=-1):
 
 def plot2(flows, tm, mbps, quality, rebuf, rebuf_pt, bws=[], bwt=[], smooth=10, fair_share=-1, num_bulk=-1, fname="", trange=-1, yheight=-1, lutil=[]):
   plt.figure(figsize=(5,3))
-  font = {'family' : 'Helvetica',
-        'weight' : 'normal',
-        'size'   : 25}
-  plt.rc('font', **font)
-  plt.rcParams.update({'font.size': 25})
+  # font = {'family' : 'Helvetica',
+  #       'weight' : 'normal',
+  #       'size'   : 30}
+  # plt.rc('font', **font)
+  # plt.rcParams.update({'font.size': 30})
   fig, ax1 = plt.subplots(figsize=(6,4))
   ax2 = ax1.twinx()
   # ax1.plot(tm, mbps, "y", label = "Goodput")

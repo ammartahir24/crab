@@ -3,7 +3,7 @@ from functions import *
 path = 'data/robustness_analysis/'
 flow_idfrs = ['.3001 > crab-VirtualBox', '.3002 > crab', '.3003 > crab']
 exps = ["crab/", "statusquo/", "throttle/", "unthrottled/"]
-exp_names = ["Original CRAB", "Status Quo", "Throttled to \n25 Mbps &\n WFQ", "Unthrottled &\n WFQ"]
+exp_names = ["Original CRAB", "Status Quo", "Throttled to \n25 Mbps \&\n WFQ", "Unthrottled \&\n WFQ"]
 # flow_idfrs = ['mirrors.mit.edu.http > crab', 'edge.kernel.org.http > crab', '.100.https > crab', 'canonical.com.https > crab-VirtualBox']
 td = 50
 flow1 = []
