@@ -1,6 +1,6 @@
 CRAB allows end-users to shape downlink traffic from devices in end-user's domain (computers, home routers) even if the bottleneck does not naturally occur within end-user's domain. 
 
-See our paper at: 
+See our paper at: [website](https://projectcrab.web.illinois.edu) | [nsdi'23](https://www.usenix.org/conference/nsdi23/presentation/tahir)
 
 ## Using CRAB
 
